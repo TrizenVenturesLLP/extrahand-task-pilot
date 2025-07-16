@@ -16,7 +16,7 @@ const HeroSection = () => {
             <div className="space-y-4">
               <h1 className="text-5xl lg:text-6xl font-bold text-secondary leading-tight">
                 Get your work done {" "}
-                <span className="text-primary">Wherever you are</span>
+                <span className="text-primary">wherever you are</span>
               </h1>
               <p className="text-xl text-text-light max-w-lg">
                 Post any task in any location and let trusted locals handle it for you. 
