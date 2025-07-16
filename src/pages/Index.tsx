@@ -19,13 +19,13 @@ const Index = () => {
         <div id="benefits">
           <BenefitsSection />
         </div>
-        <div id="businesses">
+        <div id="businesses"   className="px-6 sm:px-10 lg:px-12 py-20 rounded-3xl bg-[#fef9f2] mx-2 md:mx-6">
           <TargetUsersSection />
         </div>
         <div id="safety">
           <TrustSafetySection />
         </div>
-        <FinalCTASection />
+        {/* <FinalCTASection /> */}
       </main>
       <Footer />
     </div>
