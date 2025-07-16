@@ -13,7 +13,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md border-b border-light-gray z-50">
+    <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-border z-50">
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -21,11 +21,10 @@ const Header = () => {
             <img 
               src="/lovable-uploads/83b553c5-31a3-40ab-a031-6070c5e52e2b.png" 
               alt="Extrahand Logo" 
-              className="w-10 h-10"
+              className="w-8 h-8"
             />
             <div>
-              <span className="text-xl font-bold text-secondary">Extrahand</span>
-              <div className="text-xs text-text-light">Help when you need it</div>
+              <span className="text-xl font-bold text-foreground">Extrahand</span>
             </div>
           </div>
 
@@ -35,7 +34,7 @@ const Header = () => {
               <a
                 key={item.label}
                 href={item.href}
-                className="text-text-light hover:text-secondary transition-colors duration-300 font-medium"
+                className="text-text-light hover:text-foreground transition-colors duration-200 font-medium"
               >
                 {item.label}
               </a>
@@ -43,11 +42,11 @@ const Header = () => {
           </nav>
 
           {/* Desktop Actions */}
-          <div className="hidden md:flex items-center gap-4">
-            <Button variant="ghost" className="text-secondary hover:text-primary">
+          <div className="hidden md:flex items-center gap-3">
+            <Button variant="ghost" className="text-foreground hover:text-primary">
               Log In
             </Button>
-            <Button variant="warm" className="shadow-warm">
+            <Button variant="hero">
               Sign Up
             </Button>
           </div>
@@ -55,7 +54,7 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 text-secondary hover:text-primary transition-colors duration-300"
+            className="md:hidden p-2 text-foreground hover:text-primary transition-colors duration-200"
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -63,23 +62,23 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden absolute top-16 left-0 right-0 bg-white border-b border-light-gray shadow-lg">
+          <div className="md:hidden absolute top-16 left-0 right-0 bg-white border-b border-border shadow-lg">
             <nav className="p-6 space-y-4">
               {navItems.map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
-                  className="block text-text-light hover:text-secondary transition-colors duration-300 font-medium py-2"
+                  className="block text-text-light hover:text-foreground transition-colors duration-200 font-medium py-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}
                 </a>
               ))}
               <div className="pt-4 space-y-3">
-                <Button variant="ghost" className="w-full text-secondary hover:text-primary">
+                <Button variant="ghost" className="w-full text-foreground hover:text-primary">
                   Log In
                 </Button>
-                <Button variant="warm" className="w-full shadow-warm">
+                <Button variant="hero" className="w-full">
                   Sign Up
                 </Button>
               </div>

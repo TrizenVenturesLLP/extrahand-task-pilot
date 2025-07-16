@@ -59,6 +59,7 @@ export default {
 				'success-green': 'hsl(var(--success-green))',
 				'light-gray': 'hsl(var(--light-gray))',
 				'text-light': 'hsl(var(--text-light))',
+				'text-muted': 'hsl(var(--text-muted))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -134,9 +135,10 @@ export default {
 				'gradient-subtle': 'var(--gradient-subtle)'
 			},
 			boxShadow: {
-				'warm': 'var(--shadow-warm)',
-				'trust': 'var(--shadow-trust)',
-				'card': 'var(--shadow-card)'
+				'sm': 'var(--shadow-sm)',
+				'md': 'var(--shadow-md)',
+				'lg': 'var(--shadow-lg)',
+				'xl': 'var(--shadow-xl)'
 			}
 		}
 	},
