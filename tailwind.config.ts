@@ -60,6 +60,11 @@ export default {
 				'light-gray': 'hsl(var(--light-gray))',
 				'text-light': 'hsl(var(--text-light))',
 				'text-muted': 'hsl(var(--text-muted))',
+				'beige': '#F5E9DA',
+				'beige-tint': '#fef9f2',
+				'black-light': '#23272f',
+				'navy': '#0D1B2A',
+				'offwhite': '#F9FAFB',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
