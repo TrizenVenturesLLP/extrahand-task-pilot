@@ -31,10 +31,10 @@ const ScrollingGrid = () => {
                 className="w-20 h-20 object-cover bg-gray-100 flex-shrink-0 border border-[#eaf1fb] rounded-xl"
               />
               <div className="flex flex-col overflow-hidden">
-                <div className="font-bold text-base text-[#102266] leading-snug line-clamp-1 break-words">
+                <div className="font-bold text-base text-primary leading-snug line-clamp-1 break-words">
                   {task.title}
                 </div>
-                <div className="text-sm text-[#374151] line-clamp-2 break-words">
+                <div className="text-sm text-muted-foreground line-clamp-2 break-words">
                   {task.description}
                 </div>
               </div>
@@ -65,7 +65,7 @@ const TargetUsersSection = () => {
         <div className="flex flex-col md:flex-row gap-12 md:gap-16 items-start">
           {/* Left Column */}
           <div className="flex-1 md:pt-12">
-            <h2 className="text-4xl font-bold text-[#1a237e] mb-6 leading-tight">
+            <h2 className="text-4xl font-bold text-primary mb-6 leading-tight">
               Post Any Task. <br />Perform What You Love.
             </h2>
             <ol className="mb-10 space-y-4">
@@ -75,14 +75,14 @@ const TargetUsersSection = () => {
                 "Performers pick tasks that match their skills and capabilities.",
               ].map((step, idx) => (
                 <li key={idx} className="flex items-center gap-4">
-                  <span className="w-8 h-8 flex items-center justify-center rounded-full bg-[#e0e7ff] text-[#2250d7] font-bold text-md">
+                  <span className="w-8 h-8 flex items-center justify-center rounded-full bg-warm-yellow text-primary font-bold text-md">
                     {idx + 1}
                   </span>
-                  <span className="text-lg text-[#102266] font-medium">{step}</span>
+                  <span className="text-lg text-primary font-medium">{step}</span>
                 </li>
               ))}
             </ol>
-            <button className="bg-[#2250d7] hover:bg-[#1636a0] text-white font-bold text-lg px-8 py-4 rounded-full shadow-lg transition-colors duration-200">
+            <button className="bg-primary hover:bg-primary/90 text-white font-bold text-lg px-8 py-4 rounded-full shadow-lg transition-colors duration-200">
               Post your task
             </button>
           </div>
