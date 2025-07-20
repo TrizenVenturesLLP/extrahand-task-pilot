@@ -65,7 +65,8 @@ const HowItWorksSection = () => {
                 <img
                   src={step.image}
                   alt={step.title}
-                  style = {{width:350}}
+                  style={{ width: 350, border: 'none', boxShadow: 'none' }}
+                  className="border-none shadow-none"
                 />
               </div>
               {/* Step Text */}
