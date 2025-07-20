@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 
 const steps = [
   {
-    image: "/assets/mobilescreens/post-task.png",
+    image: "/assets/mobilescreens/post-task.jpg",
     title: "Post a Task",
     highlight: "Describe your task, location, and budget.",
     description:
@@ -10,7 +10,7 @@ const steps = [
     cta: "Start your first task",
   },
   {
-    image: "/assets/mobilescreens/set-budget.png",
+    image: "/assets/mobilescreens/set-budget.jpg",
     title: "Get Matched",
     highlight: "Connect with trusted locals.",
     description:
@@ -18,7 +18,7 @@ const steps = [
     cta: "See how matching works",
   },
   {
-    image: "/assets/mobilescreens/approve-task.png",
+    image: "/assets/mobilescreens/approve-task.jpg",
     title: "Task Complete",
     highlight: "Track and confirm completion.",
     description:
