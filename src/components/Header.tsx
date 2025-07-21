@@ -160,75 +160,101 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden absolute top-16 left-0 right-0 bg-white border-b border-border shadow-lg z-50">
-            <nav className="p-6 space-y-2">
-              {navItems.map((item) =>
-                item.isButton ? (
-                  <Button
-                    key={item.label}
-                    asChild
-                    className={`w-full font-semibold px-5 py-2 text-base shadow-sm bg-yellow-400 hover:bg-yellow-500 text-black mb-2 transition-colors duration-200 relative ${activeNav === item.label ? barClass : ''}`}
-                    onClick={() => handleNavClick(item)}
-                  >
-                    <a href={item.href} onClick={() => setIsMenuOpen(false)}>{item.label}</a>
-                  </Button>
-                ) : item.isDropdown ? (
-                  <div
-                    key={item.label}
-                    className={`relative flex flex-col items-center w-full mb-2 px-3 py-2 cursor-pointer ${activeNav === item.label ? barClass : ''}`}
-                    ref={dropdownRef}
-                  >
-                    <div className="flex items-center gap-1 w-full justify-between" onClick={() => handleNavClick(item)}>
-                      <span className="text-text-light hover:text-foreground transition-colors duration-200 font-medium">{item.label}</span>
-                      <ChevronDown className="w-4 h-4 text-gray-400" />
-                    </div>
-                    {/* Dropdown */}
-                    {showCategories && (
-                      <div className="absolute left-0 right-0 top-full mt-2 bg-white rounded-xl shadow-xl border border-gray-200 z-50 p-4 max-h-72 overflow-y-auto grid grid-cols-2 gap-4 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
-                        {getCategoryColumns(2).map((col, i) => (
-                          <ul key={i} className="space-y-2 min-w-[120px]">
-                            {col.map((cat) => (
-                              <li key={cat}>
-                                <a href="#" className="block text-gray-700 hover:text-primary text-sm font-medium transition-colors duration-150 py-1 px-2 rounded">
-                                  {cat}
-                                </a>
-                              </li>
-                            ))}
-                          </ul>
-                        ))}
+          <div className="md:hidden fixed inset-0 top-16 bg-white z-50 overflow-y-auto">
+            <div className="flex flex-col h-full">
+              <nav className="flex-1 px-6 py-8 space-y-1">
+                {navItems.map((item) =>
+                  item.isButton ? (
+                    <Button
+                      key={item.label}
+                      asChild
+                      className="w-full h-12 font-semibold text-lg bg-accent hover:bg-accent/90 text-accent-foreground rounded-lg mb-6 shadow-sm transition-all duration-200"
+                      onClick={() => handleNavClick(item)}
+                    >
+                      <a href={item.href} onClick={() => setIsMenuOpen(false)}>{item.label}</a>
+                    </Button>
+                  ) : item.isDropdown ? (
+                    <div
+                      key={item.label}
+                      className="w-full mb-4"
+                      ref={dropdownRef}
+                    >
+                      <div 
+                        className="flex items-center justify-between w-full py-4 px-0 cursor-pointer group"
+                        onClick={() => handleNavClick(item)}
+                      >
+                        <span className="text-muted-foreground group-hover:text-foreground transition-colors duration-200 font-medium text-lg">{item.label}</span>
+                        <ChevronDown className={`w-5 h-5 text-muted-foreground transition-transform duration-200 ${showCategories ? 'rotate-180' : ''}`} />
                       </div>
-                    )}
-                  </div>
-                ) : (
-                  <a
-                    key={item.label}
-                    href={item.href}
-                    className={`block text-text-light hover:text-foreground transition-colors duration-200 font-medium py-2 relative flex flex-col items-center ${activeNav === item.label ? barClass : ''}`}
-                    onClick={() => handleNavClick(item)}
-                  >
-                    {item.label}
+                      {/* Dropdown */}
+                      {showCategories && (
+                        <div className="bg-muted/30 rounded-xl p-4 mt-2 max-h-72 overflow-y-auto grid grid-cols-2 gap-3">
+                          {getCategoryColumns(2).map((col, i) => (
+                            <ul key={i} className="space-y-2">
+                              {col.map((cat) => (
+                                <li key={cat}>
+                                  <a 
+                                    href="#" 
+                                    className="block text-muted-foreground hover:text-primary text-sm font-medium transition-colors duration-150 py-2 px-3 rounded-md hover:bg-background"
+                                    onClick={() => setIsMenuOpen(false)}
+                                  >
+                                    {cat}
+                                  </a>
+                                </li>
+                              ))}
+                            </ul>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  ) : (
+                    <a
+                      key={item.label}
+                      href={item.href}
+                      className="block text-muted-foreground hover:text-foreground transition-colors duration-200 font-medium py-4 text-lg"
+                      onClick={() => {
+                        handleNavClick(item);
+                        setIsMenuOpen(false);
+                      }}
+                    >
+                      {item.label}
+                    </a>
+                  )
+                )}
+                
+                {/* Divider */}
+                <div className="border-t border-border my-8"></div>
+                
+                {/* Auth Actions */}
+                <div className="space-y-4">
+                  {actionItems.slice(0, 2).map((item) => (
+                    <a
+                      key={item.label}
+                      href={item.href}
+                      className="block text-muted-foreground hover:text-foreground transition-colors duration-200 font-medium py-4 text-lg"
+                      onClick={() => {
+                        handleActionClick(item);
+                        setIsMenuOpen(false);
+                      }}
+                    >
+                      {item.label}
+                    </a>
+                  ))}
+                </div>
+              </nav>
+              
+              {/* Bottom CTA */}
+              <div className="p-6 border-t border-border bg-muted/20">
+                <Button
+                  asChild
+                  className="w-full h-12 font-semibold text-lg bg-accent hover:bg-accent/90 text-accent-foreground rounded-lg shadow-sm transition-all duration-200"
+                >
+                  <a href="#become-tasker" onClick={() => setIsMenuOpen(false)}>
+                    Become a Tasker
                   </a>
-                )
-              )}
-              <div className="pt-4 space-y-2">
-                {actionItems.map((item) => (
-                  <Button
-                    key={item.label}
-                    asChild
-                    variant={item.variant as "ghost" | "outline" | "hero"}
-                    className={
-                      `${item.label === "Become a Tasker"
-                        ? "w-full font-semibold px-5 py-2 text-base bg-yellow-400 hover:bg-yellow-500 text-black border-yellow-400 border shadow-sm transition-colors duration-200"
-                        : "w-full font-medium px-4 py-2 text-base"}
-                      relative ${activeAction === item.label ? barClass : ''}`
-                    }
-                    onClick={() => handleActionClick(item)}
-                  >
-                    <a href={item.href} onClick={() => setIsMenuOpen(false)}>{item.label}</a>
-                  </Button>
-                ))}
+                </Button>
               </div>
-            </nav>
+            </div>
           </div>
         )}
       </div>
