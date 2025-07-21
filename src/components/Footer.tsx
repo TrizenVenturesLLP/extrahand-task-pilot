@@ -110,9 +110,9 @@ const PartnershipBlock = () => (
 
 const Footer = () => {
   return (
-      <footer className="bg-navy text-offwhite w-full rounded-2xl m-3">
-        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 pt-10 pb-4">
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 text-center md:text-left">
+      <footer className="bg-navy text-offwhite w-full rounded-2xl mx-2 sm:mx-3">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 pt-8 lg:pt-10 pb-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-8 text-center md:text-left">
           {footerColumns.map((col, idx) => (
             <div key={idx}>
             <h3 className="font-semibold text-base mb-4 tracking-wide text-offwhite/90">{col.title}</h3>
@@ -131,13 +131,13 @@ const Footer = () => {
             </div>
           ))}
         </div>
-        <div className="flex flex-col md:flex-row items-center justify-between mt-12 gap-8">
+        <div className="flex flex-col lg:flex-row items-center justify-between mt-8 lg:mt-12 gap-6 lg:gap-8">
           {/* <div className="flex-1 flex flex-col items-center md:items-start">
             <PartnershipBlock />
             <div className="text-xs text-offwhite/70 mt-2">Extrahand Limited 2024 ©, All rights reserved</div>
           </div> */}
-          <div className="flex flex-col items-center gap-3 md:gap-2">
-            <div className="flex gap-2 mb-2">
+          <div className="flex flex-col items-center gap-3 lg:gap-2">
+            <div className="flex flex-col sm:flex-row gap-2 mb-2">
               <AppStoreButton />
               <GooglePlayButton />
             </div>

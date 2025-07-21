@@ -4,33 +4,33 @@ import { Button } from "@/components/ui/button";
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center bg-gradient-subtle">
-      <div className="w-full max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center lg:items-start justify-between gap-0 relative z-10">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 flex flex-col lg:flex-row items-center lg:items-start justify-between gap-8 lg:gap-0 relative z-10">
         {/* Text */}
-        <div className="w-full lg:w-7/12 pt-16 pb-12 flex flex-col justify-center items-start lg:pl-12">
+        <div className="w-full lg:w-7/12 pt-16 pb-8 lg:pb-12 flex flex-col justify-center items-center lg:items-start text-center lg:text-left lg:pl-12">
           <h1
-            className="text-4xl lg:text-6xl font-extrabold text-foreground leading-tight mb-3"
+            className="text-3xl sm:text-4xl lg:text-6xl font-extrabold text-foreground leading-tight mb-3"
             style={{ fontFamily: 'Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif', letterSpacing: '-0.03em' }}
           >
             Get your tasks done
             <span className="text-primary block">wherever you are</span>
           </h1>
-          <p className="text-xl text-text-light max-w-xl leading-relaxed mb-8">
+          <p className="text-lg sm:text-xl text-text-light max-w-xl leading-relaxed mb-8">
             Post any task, anywhere. Trusted locals will handle it for you.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 mb-4">
-            <Button variant="hero" size="lg" className="text-lg px-8 py-4 font-bold shadow-lg">
+          <div className="flex flex-col sm:flex-row gap-4 mb-4 w-full sm:w-auto">
+            <Button variant="hero" size="lg" className="text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 font-bold shadow-lg w-full sm:w-auto">
               Get Started
-              <ArrowRight className="w-5 h-5 ml-2" />
+              <ArrowRight className="w-4 sm:w-5 h-4 sm:h-5 ml-2" />
             </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 py-4 font-bold border-2 border-primary text-primary hover:bg-primary/10">
-              <Play className="w-5 h-5 mr-2" />
+            <Button variant="outline" size="lg" className="text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 font-bold border-2 border-primary text-primary hover:bg-primary/10 w-full sm:w-auto">
+              <Play className="w-4 sm:w-5 h-4 sm:h-5 mr-2" />
               Watch Demo
             </Button>
           </div>
         </div>
         {/* Image */}
-        <div className="w-full lg:w-5/12 mt-12 lg:mt-0 flex justify-center items-center">
-          <div className="relative animate-slide-up w-full max-w-lg" style={{ minHeight: 340 }}>
+        <div className="w-full lg:w-5/12 mt-0 lg:mt-0 flex justify-center items-center">
+          <div className="relative animate-slide-up w-full max-w-sm lg:max-w-lg" style={{ minHeight: 300 }}>
             <div className="relative w-full h-full flex justify-center items-center">
               {/* Phone mockup background */}
               <div className="bg-gradient-trust rounded-3xl p-8 shadow-trust w-full max-w-lg">

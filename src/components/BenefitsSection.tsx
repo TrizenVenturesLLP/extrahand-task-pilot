@@ -35,17 +35,17 @@ const benefits = [
 
 const BenefitsSection = () => {
   return (
-    <section className="py-20">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-secondary mb-4">
+    <section className="py-16 lg:py-20">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="text-center mb-12 lg:mb-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-secondary mb-4">
             Why Choose <span className="text-primary">Extrahand</span>?
           </h2>
-          <p className="text-xl text-text-light max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-text-light max-w-3xl mx-auto px-4">
             We've built the most reliable platform for remote task delegation, designed with trust, efficiency, and user experience at its core.
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
           {benefits.map((feature, idx) => (
             <div
               key={idx}

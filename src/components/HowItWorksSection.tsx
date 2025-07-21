@@ -32,51 +32,43 @@ const HowItWorksSection = () => {
     <section className="py-20 bg-white relative overflow-x-hidden" id="how-it-works">
       <div className="container mx-auto px-6">
         {/* Section Header */}
-        <div className="text-center mb-24">
-          <h2 className="text-5xl font-bold text-foreground mb-4">How It Works</h2>
-          <p className="text-xl text-foreground/80 max-w-2xl mx-auto">
+        <div className="text-center mb-16 lg:mb-24">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">How It Works</h2>
+          <p className="text-lg sm:text-xl text-foreground/80 max-w-2xl mx-auto px-4">
             Getting your tasks done remotely has never been easier. Follow these simple steps and watch the magic happen.
           </p>
         </div>
 
         {/* Steps as Horizontal Row on Desktop, Vertical on Mobile */}
-        <div className="flex flex-col md:flex-row items-stretch justify-between gap-12 md:gap-8">
+        <div className="flex flex-col lg:flex-row items-stretch justify-between gap-12 lg:gap-8">
           {steps.map((step, idx) => (
             <div
               key={idx}
-              className="flex-1 flex flex-col items-center md:items-start text-center md:text-left px-2"
+              className="flex-1 flex flex-col items-center text-center px-4 lg:px-2"
               style={{ minWidth: 0 }}
             >
               {/* Step Number Badge */}
-              <div className="mb-4 md:mb-6">
+              <div className="mb-4 lg:mb-6">
                 <span className="inline-block bg-secondary text-white font-bold rounded-full px-4 py-1 text-lg shadow-md">
                   {idx + 1}
                 </span>
               </div>
-              {/* Step Image - no frame, no background */}
+              {/* Step Image - mobile responsive */}
               <div className="mb-6 flex items-center justify-center w-full">
-                {/* <img
-                  src={step.image}
-                  alt={step.title}
-                  className="object-contain w-40 h-64 md:w-48 md:h-72 transition-transform duration-500 hover:scale-105 rounded-xl shadow-lg"
-                  loading="lazy"
-                  style={{ background: 'none', boxShadow: '0 8px 32px 0 rgba(0,0,0,0.10)' }}
-                /> */}
                 <img
                   src={step.image}
                   alt={step.title}
-                  style={{ width: 350, border: 'none', boxShadow: 'none' }}
-                  className="border-none shadow-none"
+                  className="border-none shadow-none w-full max-w-[250px] sm:max-w-[300px] lg:max-w-[350px] h-auto object-contain"
                 />
               </div>
               {/* Step Text */}
-              <h3 className="text-2xl md:text-2xl font-extrabold text-foreground mb-3 leading-tight">
+              <h3 className="text-xl sm:text-2xl font-extrabold text-foreground mb-3 leading-tight">
                 {step.title}
               </h3>
-              <div className="text-lg md:text-lg font-bold text-primary-dark mb-2">
+              <div className="text-base sm:text-lg font-bold text-primary-dark mb-2">
                 {step.highlight}
               </div>
-              <p className="text-base md:text-base text-foreground mb-4 max-w-xs md:max-w-none mx-auto md:mx-0">
+              <p className="text-sm sm:text-base text-foreground mb-4 max-w-xs lg:max-w-none mx-auto">
                 {step.description}
               </p>
               {/* <Button variant="outline" size="sm" className="text-primary-dark font-semibold border-primary-dark">
