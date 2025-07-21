@@ -81,9 +81,8 @@ const HowItWorksSection = () => {
         {/* Centered Post your task Button */}
         <div className="flex justify-center mt-10">
           <Button
-            className="text-lg px-10 py-4 font-bold rounded-full bg-white border-2 shadow-lg transition-transform duration-200 hover:scale-105 hover:shadow-2xl"
-            style={{ borderColor: '#FFC107', color: '#111', boxShadow: '0 8px 32px 0 rgba(255,193,7,0.10)' }}
-          >
+            className="text-lg px-10 py-4 text-black border-4 border-yellow-400 hover:bg-yellow-400 hover:text-black transition-transform duration-200 hover:scale-105"
+            >
             Post your task now
           </Button>
         </div>

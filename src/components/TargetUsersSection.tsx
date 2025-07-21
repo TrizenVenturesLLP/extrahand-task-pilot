@@ -82,7 +82,7 @@ const TargetUsersSection = () => {
                 </li>
               ))}
             </ol>
-            <button className="bg-[#2250d7] hover:bg-[#1636a0] text-white font-bold text-lg px-8 py-4 rounded-full shadow-lg transition-colors duration-200">
+            <button className="bg-[#2250d7] hover:bg-[#1636a0] text-white font-bold text-lg px-8 py-4 rounded-full shadow-lg transition-colors duration-200 rounded-md">
               Post your task
             </button>
           </div>
